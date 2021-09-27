@@ -1,0 +1,441 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x1C7134A27A6BB38A",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../project_uart_pwm.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "PWM": {
+        "Comp_27_0": "",
+        "Counter_27_0": ""
+      },
+      "UART_Percent": {
+        "xlslice_0": "",
+        "rx_mod_0": "",
+        "clk_divider_0": ""
+      },
+      "LUT_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "en": {
+        "direction": "I"
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "LED": {
+        "direction": "O"
+      },
+      "sin": {
+        "direction": "I"
+      },
+      "motor": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "PWM": {
+        "ports": {
+          "en": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "y": {
+            "direction": "I",
+            "left": "26",
+            "right": "0"
+          },
+          "LED": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "Comp_27_0": {
+            "vlnv": "xilinx.com:module_ref:Comp_27:1.0",
+            "xci_name": "design_1_Comp_27_0_0",
+            "xci_path": "ip/design_1_Comp_27_0_0_1/design_1_Comp_27_0_0.xci",
+            "inst_hier_path": "PWM/Comp_27_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "Comp_27",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "x": {
+                "direction": "I",
+                "left": "26",
+                "right": "0"
+              },
+              "y": {
+                "direction": "I",
+                "left": "26",
+                "right": "0"
+              },
+              "z": {
+                "direction": "O"
+              }
+            }
+          },
+          "Counter_27_0": {
+            "vlnv": "xilinx.com:module_ref:Counter_27:1.0",
+            "xci_name": "design_1_Counter_27_0_0",
+            "xci_path": "ip/design_1_Counter_27_0_0_1/design_1_Counter_27_0_0.xci",
+            "inst_hier_path": "PWM/Counter_27_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "Counter_27",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "en": {
+                "direction": "I"
+              },
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "design_1_clk",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "count": {
+                "direction": "O",
+                "left": "26",
+                "right": "0"
+              }
+            }
+          }
+        },
+        "nets": {
+          "Comp_27_0_z": {
+            "ports": [
+              "Comp_27_0/z",
+              "LED"
+            ]
+          },
+          "Counter_27_0_count": {
+            "ports": [
+              "Counter_27_0/count",
+              "Comp_27_0/x"
+            ]
+          },
+          "clk_0_1": {
+            "ports": [
+              "clk",
+              "Counter_27_0/clk"
+            ]
+          },
+          "en_0_1": {
+            "ports": [
+              "en",
+              "Counter_27_0/en"
+            ]
+          },
+          "rst_0_1": {
+            "ports": [
+              "rst",
+              "Counter_27_0/rst"
+            ]
+          },
+          "xlconstant_0_dout": {
+            "ports": [
+              "y",
+              "Comp_27_0/y"
+            ]
+          }
+        }
+      },
+      "UART_Percent": {
+        "ports": {
+          "Dout": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "sin_0": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          }
+        },
+        "components": {
+          "xlslice_0": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "xci_name": "design_1_xlslice_0_0",
+            "xci_path": "ip/design_1_xlslice_0_0/design_1_xlslice_0_0.xci",
+            "inst_hier_path": "UART_Percent/xlslice_0",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "3"
+              },
+              "DIN_WIDTH": {
+                "value": "8"
+              },
+              "DOUT_WIDTH": {
+                "value": "4"
+              }
+            }
+          },
+          "rx_mod_0": {
+            "vlnv": "xilinx.com:module_ref:rx_mod:1.0",
+            "xci_name": "design_1_rx_mod_0_0",
+            "xci_path": "ip/design_1_rx_mod_0_0/design_1_rx_mod_0_0.xci",
+            "inst_hier_path": "UART_Percent/rx_mod_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "rx_mod",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "sin": {
+                "direction": "I"
+              },
+              "data_out": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "intr": {
+                "type": "intr",
+                "direction": "O",
+                "parameters": {
+                  "SENSITIVITY": {
+                    "value": "LEVEL_HIGH",
+                    "value_src": "constant"
+                  }
+                }
+              }
+            }
+          },
+          "clk_divider_0": {
+            "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+            "xci_name": "design_1_clk_divider_0_0",
+            "xci_path": "ip/design_1_clk_divider_0_0/design_1_clk_divider_0_0.xci",
+            "inst_hier_path": "UART_Percent/clk_divider_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "clk_divider",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "design_1_clk",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "clk_div": {
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "nets": {
+          "clk_0_1": {
+            "ports": [
+              "clk",
+              "clk_divider_0/clk"
+            ]
+          },
+          "clk_divider_0_clk_div": {
+            "ports": [
+              "clk_divider_0/clk_div",
+              "rx_mod_0/clk"
+            ]
+          },
+          "rst_0_1": {
+            "ports": [
+              "rst",
+              "clk_divider_0/rst",
+              "rx_mod_0/rst"
+            ]
+          },
+          "rx_mod_0_data_out": {
+            "ports": [
+              "rx_mod_0/data_out",
+              "xlslice_0/Din"
+            ]
+          },
+          "sin_0_1": {
+            "ports": [
+              "sin_0",
+              "rx_mod_0/sin"
+            ]
+          },
+          "xlslice_0_Dout": {
+            "ports": [
+              "xlslice_0/Dout",
+              "Dout"
+            ]
+          }
+        }
+      },
+      "LUT_0": {
+        "vlnv": "xilinx.com:module_ref:LUT:1.0",
+        "xci_name": "design_1_LUT_0_0",
+        "xci_path": "ip/design_1_LUT_0_0/design_1_LUT_0_0.xci",
+        "inst_hier_path": "LUT_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "LUT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "percent": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "bits": {
+            "direction": "O",
+            "left": "26",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Comp_27_0_z": {
+        "ports": [
+          "PWM/LED",
+          "LED",
+          "motor"
+        ]
+      },
+      "LUT_0_bits": {
+        "ports": [
+          "LUT_0/bits",
+          "PWM/y"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk",
+          "PWM/clk",
+          "UART_Percent/clk"
+        ]
+      },
+      "en_0_1": {
+        "ports": [
+          "en",
+          "PWM/en"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst",
+          "PWM/rst",
+          "UART_Percent/rst"
+        ]
+      },
+      "sin_0_1": {
+        "ports": [
+          "sin",
+          "UART_Percent/sin_0"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "UART_Percent/Dout",
+          "LUT_0/percent"
+        ]
+      }
+    }
+  }
+}

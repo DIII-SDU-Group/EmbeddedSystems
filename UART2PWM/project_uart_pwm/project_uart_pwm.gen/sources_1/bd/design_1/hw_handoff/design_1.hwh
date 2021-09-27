@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Sep 27 17:24:49 2021" VIVADOVERSION="2021.1.1">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_Counter_27_0" PORT="clk"/>
+        <CONNECTION INSTANCE="UART_Percent_clk_divider_0" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="External_Ports_en">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_Counter_27_0" PORT="en"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_Counter_27_0" PORT="rst"/>
+        <CONNECTION INSTANCE="UART_Percent_clk_divider_0" PORT="rst"/>
+        <CONNECTION INSTANCE="UART_Percent_rx_mod_0" PORT="rst"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED" SIGIS="undef" SIGNAME="PWM_Comp_27_0_z">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_Comp_27_0" PORT="z"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sin" SIGIS="undef" SIGNAME="External_Ports_sin">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UART_Percent_rx_mod_0" PORT="sin"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="motor" SIGIS="undef" SIGNAME="PWM_Comp_27_0_z">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_Comp_27_0" PORT="z"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/LUT_0" HWVERSION="1.0" INSTANCE="LUT_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="LUT" VLNV="xilinx.com:module_ref:LUT:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_LUT_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="3" NAME="percent" RIGHT="0" SIGIS="undef" SIGNAME="UART_Percent_xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Percent_xlslice_0" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="26" NAME="bits" RIGHT="0" SIGIS="undef" SIGNAME="LUT_0_bits">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PWM_Comp_27_0" PORT="y"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/PWM/Comp_27_0" HWVERSION="1.0" INSTANCE="PWM_Comp_27_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Comp_27" VLNV="xilinx.com:module_ref:Comp_27:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Comp_27_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="26" NAME="x" RIGHT="0" SIGIS="undef" SIGNAME="PWM_Counter_27_0_count">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PWM_Counter_27_0" PORT="count"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="26" NAME="y" RIGHT="0" SIGIS="undef" SIGNAME="LUT_0_bits">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="LUT_0" PORT="bits"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="z" SIGIS="undef" SIGNAME="PWM_Comp_27_0_z">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="motor"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/PWM/Counter_27_0" HWVERSION="1.0" INSTANCE="PWM_Counter_27_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Counter_27" VLNV="xilinx.com:module_ref:Counter_27:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Counter_27_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="External_Ports_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="26" NAME="count" RIGHT="0" SIGIS="undef" SIGNAME="PWM_Counter_27_0_count">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PWM_Comp_27_0" PORT="x"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_Percent/clk_divider_0" HWVERSION="1.0" INSTANCE="UART_Percent_clk_divider_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_divider" VLNV="xilinx.com:module_ref:clk_divider:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_clk_divider_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="UART_Percent_clk_divider_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Percent_rx_mod_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_Percent/rx_mod_0" HWVERSION="1.0" INSTANCE="UART_Percent_rx_mod_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rx_mod" VLNV="xilinx.com:module_ref:rx_mod:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_rx_mod_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="UART_Percent_clk_divider_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Percent_clk_divider_0" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sin" SIGIS="undef" SIGNAME="External_Ports_sin">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="UART_Percent_rx_mod_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Percent_xlslice_0" PORT="Din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intr" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/UART_Percent/xlslice_0" HWVERSION="1.0" INSTANCE="UART_Percent_xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="3"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="UART_Percent_rx_mod_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Percent_rx_mod_0" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="UART_Percent_xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="LUT_0" PORT="percent"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="design_1_Comp_27_0_0_synth_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/design_1_Comp_27_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_27_0_0_synth_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/design_1_Counter_27_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_rx_mod_0_0_synth_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/design_1_rx_mod_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_clk_divider_0_0_synth_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/design_1_clk_divider_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_LUT_0_0_synth_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/design_1_LUT_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="design_1_Comp_27_0_0_synth_1"/>
+		<Parent Id="design_1_Counter_27_0_0_synth_1"/>
+		<Parent Id="design_1_rx_mod_0_0_synth_1"/>
+		<Parent Id="design_1_clk_divider_0_0_synth_1"/>
+		<Parent Id="design_1_LUT_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="/home/esme/Desktop/VivadoProjects/EmbeddedSystems/UART2PWM/project_uart_pwm/project_uart_pwm.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="design_1_Comp_27_0_0_synth_1"/>
+		<Parent Id="design_1_Counter_27_0_0_synth_1"/>
+		<Parent Id="design_1_rx_mod_0_0_synth_1"/>
+		<Parent Id="design_1_clk_divider_0_0_synth_1"/>
+		<Parent Id="design_1_LUT_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
