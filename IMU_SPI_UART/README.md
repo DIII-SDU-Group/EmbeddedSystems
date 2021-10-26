@@ -1,4 +1,4 @@
-# IMU data visualizer (SPI and UART)	
+# IMU data visualizer (IMU <> SPI > UART)	
 
 This project shows how to configure the IMU ICM20948 using SPI and visualize its data using UART.
 
