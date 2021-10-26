@@ -4,7 +4,7 @@ This project shows how to configure the IMU ICM20948 using SPI and visualize its
 
 The main block design is in the following figure:
 
-![image info](./overall.png)
+![image info](./images/overall.png)
 
 - Address handler is a unit to change the IMU addresses (WHO AM I, GYRO_XOUT_L, etc.).
 - IMU control is an FSM to wake up the IMU by writing to address x"06" the value of x"00". It also takes the addresses from the Address handler and sends it to the IMU.
