@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1635175627">
+  <File Type="VDS-TIMING-PB" Name="design_top_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="design_top_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="design_top_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="design_top_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="design_top_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="design_top_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="design_top_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="design_top_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="design_top_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/CTRL.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../MYSPI/MYSPI.srcs/sources_1/new/CTRL.vhd"/>
+        <Attr Name="ImportTime" Val="1606319852"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Addr_Counter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../MYSPI/MYSPI.srcs/sources_1/new/Addr_Counter.vhd"/>
+        <Attr Name="ImportTime" Val="1605707856"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/esme/Desktop/fsm_intr_fsm.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Users/esme/Desktop/fsm_intr_fsm.vhd"/>
+        <Attr Name="ImportTime" Val="1570648829"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Addr_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../MYSPI/MYSPI.srcs/sources_1/new/Addr_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1606404592"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/esme/OneDrive - Syddansk Universitet/Courses/Robot ELectronics E19/Lectures/Lecture 6/VHDL code/UART/tx_mod_fsm.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Users/esme/OneDrive - Syddansk Universitet/Courses/Robot ELectronics E19/Lectures/Lecture 6/VHDL code/UART/tx_mod_fsm.vhd"/>
+        <Attr Name="ImportTime" Val="1572258101"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/esme/OneDrive - Syddansk Universitet/Courses/Robot ELectronics E19/Lectures/Lecture 6/VHDL code/UART/clk_divider.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Users/esme/OneDrive - Syddansk Universitet/Courses/Robot ELectronics E19/Lectures/Lecture 6/VHDL code/UART/clk_divider.vhd"/>
+        <Attr Name="ImportTime" Val="1573646733"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/clk_divider.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../UART_RAM_PL/UART_RAM_PL.srcs/sources_1/new/clk_divider.vhd"/>
+        <Attr Name="ImportTime" Val="1600703934"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_top/design_top.bd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../MYSPI/MYSPI.srcs/sources_1/bd/design_top/design_top.bd"/>
+        <Attr Name="ImportTime" Val="1635175028"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/design_top/hdl/design_top_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="design_top_wrapper"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/const1.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../MYSPI/MYSPI.srcs/constrs_1/new/const1.xdc"/>
+        <Attr Name="ImportTime" Val="1606841316"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/const1.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_Addr_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_clk_divider_UART_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_CTRL_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_fsm_intr_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_Addr_Counter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_clk_divider_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_top_tx_mod_0_0"/>
+</GenRun>

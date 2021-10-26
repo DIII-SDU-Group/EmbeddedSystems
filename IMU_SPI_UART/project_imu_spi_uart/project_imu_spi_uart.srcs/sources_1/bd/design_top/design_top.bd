@@ -1,0 +1,587 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x9EE8C1BE4A3605BB",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../project_imu_spi_uart.gen/sources_1/bd/design_top",
+      "name": "design_top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "IMU_CTRL": "",
+      "Address_handler": {
+        "Addr_Counter_0": "",
+        "fsm_intr_0": "",
+        "Addr_ctrl_0": ""
+      },
+      "UART_TX": {
+        "tx_mod_0": "",
+        "clk_divider_UART_0": ""
+      },
+      "clk_divider": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_top_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "en": {
+        "direction": "I"
+      },
+      "CS": {
+        "direction": "O"
+      },
+      "MISO": {
+        "direction": "I"
+      },
+      "MOSI": {
+        "direction": "O"
+      },
+      "SCLK": {
+        "direction": "O"
+      },
+      "LEDs": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "next_reg_switch": {
+        "direction": "I"
+      },
+      "sout": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "IMU_CTRL": {
+        "vlnv": "xilinx.com:module_ref:CTRL:1.0",
+        "xci_name": "design_top_CTRL_0_0",
+        "xci_path": "ip/design_top_CTRL_0_0/design_top_CTRL_0_0.xci",
+        "inst_hier_path": "IMU_CTRL",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CTRL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "addr1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "data_ready": {
+            "direction": "O"
+          },
+          "cs": {
+            "direction": "O"
+          },
+          "SCLK": {
+            "direction": "O"
+          },
+          "MOSI": {
+            "direction": "O"
+          },
+          "MISO": {
+            "direction": "I"
+          }
+        }
+      },
+      "Address_handler": {
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "dout": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "next_reg": {
+            "direction": "I"
+          }
+        },
+        "components": {
+          "Addr_Counter_0": {
+            "vlnv": "xilinx.com:module_ref:Addr_Counter:1.0",
+            "xci_name": "design_top_Addr_Counter_0_0",
+            "xci_path": "ip/design_top_Addr_Counter_0_0/design_top_Addr_Counter_0_0.xci",
+            "inst_hier_path": "Address_handler/Addr_Counter_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "Addr_Counter",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "en": {
+                "direction": "I",
+                "parameters": {
+                  "PortWidth": {
+                    "value": "1",
+                    "value_src": "default_prop"
+                  },
+                  "SENSITIVITY": {
+                    "value": "LEVEL_HIGH",
+                    "value_src": "const_prop"
+                  }
+                }
+              },
+              "addr": {
+                "direction": "O",
+                "left": "3",
+                "right": "0"
+              }
+            }
+          },
+          "fsm_intr_0": {
+            "vlnv": "xilinx.com:module_ref:fsm_intr:1.0",
+            "xci_name": "design_top_fsm_intr_0_0",
+            "xci_path": "ip/design_top_fsm_intr_0_0/design_top_fsm_intr_0_0.xci",
+            "inst_hier_path": "Address_handler/fsm_intr_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "fsm_intr",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "strobe": {
+                "direction": "I"
+              },
+              "intr": {
+                "type": "intr",
+                "direction": "O",
+                "parameters": {
+                  "SENSITIVITY": {
+                    "value": "LEVEL_HIGH",
+                    "value_src": "constant"
+                  },
+                  "PortWidth": {
+                    "value": "1",
+                    "value_src": "default_prop"
+                  }
+                }
+              }
+            }
+          },
+          "Addr_ctrl_0": {
+            "vlnv": "xilinx.com:module_ref:Addr_ctrl:1.0",
+            "xci_name": "design_top_Addr_ctrl_0_0",
+            "xci_path": "ip/design_top_Addr_ctrl_0_0/design_top_Addr_ctrl_0_0.xci",
+            "inst_hier_path": "Address_handler/Addr_ctrl_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "Addr_ctrl",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I"
+              },
+              "addr": {
+                "direction": "I",
+                "left": "3",
+                "right": "0"
+              },
+              "dout": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              }
+            }
+          }
+        },
+        "nets": {
+          "Addr_Counter_0_addr": {
+            "ports": [
+              "Addr_Counter_0/addr",
+              "Addr_ctrl_0/addr"
+            ]
+          },
+          "Addr_ctrl_0_dout": {
+            "ports": [
+              "Addr_ctrl_0/dout",
+              "dout"
+            ]
+          },
+          "clk_divider_0_clk_div": {
+            "ports": [
+              "clk",
+              "Addr_Counter_0/clk",
+              "fsm_intr_0/clk",
+              "Addr_ctrl_0/clk"
+            ]
+          },
+          "fsm_intr_0_intr": {
+            "ports": [
+              "fsm_intr_0/intr",
+              "Addr_Counter_0/en"
+            ]
+          },
+          "rst_0_1": {
+            "ports": [
+              "rst",
+              "fsm_intr_0/rst",
+              "Addr_Counter_0/rst"
+            ]
+          },
+          "strobe_0_1": {
+            "ports": [
+              "next_reg",
+              "fsm_intr_0/strobe"
+            ]
+          }
+        }
+      },
+      "UART_TX": {
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data1": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "shift_load": {
+            "direction": "I"
+          },
+          "sout": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "tx_mod_0": {
+            "vlnv": "xilinx.com:module_ref:tx_mod:1.0",
+            "xci_name": "design_top_tx_mod_0_0",
+            "xci_path": "ip/design_top_tx_mod_0_0/design_top_tx_mod_0_0.xci",
+            "inst_hier_path": "UART_TX/tx_mod_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "tx_mod",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clkfast": {
+                "direction": "I"
+              },
+              "data_in": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "shift_load": {
+                "direction": "I"
+              },
+              "sout": {
+                "direction": "O"
+              },
+              "xmitmt": {
+                "direction": "O"
+              }
+            }
+          },
+          "clk_divider_UART_0": {
+            "vlnv": "xilinx.com:module_ref:clk_divider_UART:1.0",
+            "xci_name": "design_top_clk_divider_UART_0_0",
+            "xci_path": "ip/design_top_clk_divider_UART_0_0/design_top_clk_divider_UART_0_0.xci",
+            "inst_hier_path": "UART_TX/clk_divider_UART_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "clk_divider_UART",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "design_top_clk",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "clk_div": {
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "nets": {
+          "CTRL_0_data1": {
+            "ports": [
+              "data1",
+              "tx_mod_0/data_in"
+            ]
+          },
+          "CTRL_0_data_ready": {
+            "ports": [
+              "shift_load",
+              "tx_mod_0/shift_load"
+            ]
+          },
+          "clk_1": {
+            "ports": [
+              "clk",
+              "clk_divider_UART_0/clk"
+            ]
+          },
+          "clk_divider_UART_0_clk_div": {
+            "ports": [
+              "clk_divider_UART_0/clk_div",
+              "tx_mod_0/clkfast"
+            ]
+          },
+          "rst_0_1": {
+            "ports": [
+              "rst",
+              "tx_mod_0/rst",
+              "clk_divider_UART_0/rst"
+            ]
+          },
+          "tx_mod_0_sout": {
+            "ports": [
+              "tx_mod_0/sout",
+              "sout"
+            ]
+          }
+        }
+      },
+      "clk_divider": {
+        "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+        "xci_name": "design_top_clk_divider_0_0",
+        "xci_path": "ip/design_top_clk_divider_0_0/design_top_clk_divider_0_0.xci",
+        "inst_hier_path": "clk_divider",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_divider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_div": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Addr_ctrl_0_dout": {
+        "ports": [
+          "Address_handler/dout",
+          "IMU_CTRL/addr1"
+        ]
+      },
+      "CTRL_0_CS": {
+        "ports": [
+          "IMU_CTRL/cs",
+          "CS"
+        ]
+      },
+      "CTRL_0_MOSI": {
+        "ports": [
+          "IMU_CTRL/MOSI",
+          "MOSI"
+        ]
+      },
+      "CTRL_0_SCLK": {
+        "ports": [
+          "IMU_CTRL/SCLK",
+          "SCLK"
+        ]
+      },
+      "CTRL_0_data1": {
+        "ports": [
+          "IMU_CTRL/data1",
+          "LEDs",
+          "UART_TX/data1"
+        ]
+      },
+      "MISO_0_1": {
+        "ports": [
+          "MISO",
+          "IMU_CTRL/MISO"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "UART_TX/clk",
+          "clk_divider/clk"
+        ]
+      },
+      "clk_divider_0_clk_div": {
+        "ports": [
+          "clk_divider/clk_div",
+          "Address_handler/clk",
+          "IMU_CTRL/clk"
+        ]
+      },
+      "en_0_1": {
+        "ports": [
+          "en",
+          "IMU_CTRL/en"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst",
+          "Address_handler/rst",
+          "UART_TX/rst",
+          "IMU_CTRL/rst",
+          "clk_divider/rst"
+        ]
+      },
+      "shift_load_1": {
+        "ports": [
+          "IMU_CTRL/data_ready",
+          "UART_TX/shift_load"
+        ]
+      },
+      "strobe_0_1": {
+        "ports": [
+          "next_reg_switch",
+          "Address_handler/next_reg"
+        ]
+      },
+      "tx_mod_0_sout": {
+        "ports": [
+          "UART_TX/sout",
+          "sout"
+        ]
+      }
+    }
+  }
+}

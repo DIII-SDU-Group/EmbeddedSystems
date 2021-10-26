@@ -1,0 +1,190 @@
+
+*** Running vivado
+    with args -log design_top_Addr_Counter_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_top_Addr_Counter_0_0.tcl
+
+
+****** Vivado v2021.1.1 (64-bit)
+  **** SW Build 3286242 on Wed Jul 28 13:09:46 MDT 2021
+  **** IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script '/home/esme/.Xilinx/Vivado/Vivado_init.tcl'
+source design_top_Addr_Counter_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/mnt/data0/xilinx/Vivado/2021.1/data/ip'.
+Command: synth_design -top design_top_Addr_Counter_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1152718
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2517.809 ; gain = 0.000 ; free physical = 1308 ; free virtual = 13658
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_top_Addr_Counter_0_0' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.gen/sources_1/bd/design_top/ip/design_top_Addr_Counter_0_0/synth/design_top_Addr_Counter_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'Addr_Counter' declared at '/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/Addr_Counter.vhd:34' bound to instance 'U0' of component 'Addr_Counter' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.gen/sources_1/bd/design_top/ip/design_top_Addr_Counter_0_0/synth/design_top_Addr_Counter_0_0.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'Addr_Counter' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/Addr_Counter.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'Addr_Counter' (1#1) [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/Addr_Counter.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'design_top_Addr_Counter_0_0' (2#1) [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.gen/sources_1/bd/design_top/ip/design_top_Addr_Counter_0_0/synth/design_top_Addr_Counter_0_0.vhd:65]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2517.809 ; gain = 0.000 ; free physical = 1373 ; free virtual = 13667
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 2517.809 ; gain = 0.000 ; free physical = 3358 ; free virtual = 15653
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 3355 ; free virtual = 15650
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 3264 ; free virtual = 15560
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 3933 ; free virtual = 16231
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 3931 ; free virtual = 16229
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 3931 ; free virtual = 16229
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4421 ; free virtual = 16719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4420 ; free virtual = 16718
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4418 ; free virtual = 16716
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4417 ; free virtual = 16715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4415 ; free virtual = 16714
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4414 ; free virtual = 16712
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     1|
+|3     |LUT3 |     1|
+|4     |LUT4 |     1|
+|5     |FDCE |     4|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------------+------+
+|      |Instance |Module       |Cells |
++------+---------+-------------+------+
+|1     |top      |             |     8|
+|2     |  U0     |Addr_Counter |     8|
++------+---------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4413 ; free virtual = 16711
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.715 ; gain = 7.906 ; free physical = 4406 ; free virtual = 16704
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2525.723 ; gain = 7.906 ; free physical = 4406 ; free virtual = 16704
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2525.723 ; gain = 0.000 ; free physical = 4343 ; free virtual = 16641
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2581.742 ; gain = 0.000 ; free physical = 4593 ; free virtual = 16892
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 745565a
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2581.742 ; gain = 64.031 ; free physical = 4727 ; free virtual = 17026
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint '/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_Addr_Counter_0_0_synth_1/design_top_Addr_Counter_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2770.570 ; gain = 188.828 ; free physical = 2368 ; free virtual = 14649
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_top_Addr_Counter_0_0, cache-ID = 52e14cd5e64f89b8
+INFO: [Common 17-1381] The checkpoint '/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_Addr_Counter_0_0_synth_1/design_top_Addr_Counter_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_top_Addr_Counter_0_0_utilization_synth.rpt -pb design_top_Addr_Counter_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 25 17:20:34 2021...

@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 25 17:27:00 2021" VIVADOVERSION="2021.1.1">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="design_top" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UART_TX_clk_divider_UART_0" PORT="clk"/>
+        <CONNECTION INSTANCE="clk_divider" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Address_handler_fsm_intr_0" PORT="rst"/>
+        <CONNECTION INSTANCE="Address_handler_Addr_Counter_0" PORT="rst"/>
+        <CONNECTION INSTANCE="UART_TX_tx_mod_0" PORT="rst"/>
+        <CONNECTION INSTANCE="UART_TX_clk_divider_UART_0" PORT="rst"/>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="rst"/>
+        <CONNECTION INSTANCE="clk_divider" PORT="rst"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="External_Ports_en">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="en"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="CS" SIGIS="undef" SIGNAME="IMU_CTRL_cs">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="cs"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="MISO" SIGIS="undef" SIGNAME="External_Ports_MISO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="MISO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="MOSI" SIGIS="undef" SIGNAME="IMU_CTRL_MOSI">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="MOSI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="SCLK" SIGIS="undef" SIGNAME="IMU_CTRL_SCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="SCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="LEDs" RIGHT="0" SIGIS="undef" SIGNAME="IMU_CTRL_data1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="IMU_CTRL" PORT="data1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="next_reg_switch" SIGIS="undef" SIGNAME="External_Ports_next_reg_switch">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Address_handler_fsm_intr_0" PORT="strobe"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="sout" SIGIS="undef" SIGNAME="UART_TX_tx_mod_0_sout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UART_TX_tx_mod_0" PORT="sout"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/Address_handler/Addr_Counter_0" HWVERSION="1.0" INSTANCE="Address_handler_Addr_Counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Addr_Counter" VLNV="xilinx.com:module_ref:Addr_Counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_Addr_Counter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_divider_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_divider" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="Address_handler_fsm_intr_0_intr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Address_handler_fsm_intr_0" PORT="intr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="Address_handler_Addr_Counter_0_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Address_handler_Addr_ctrl_0" PORT="addr"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Address_handler/Addr_ctrl_0" HWVERSION="1.0" INSTANCE="Address_handler_Addr_ctrl_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Addr_ctrl" VLNV="xilinx.com:module_ref:Addr_ctrl:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_Addr_ctrl_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_divider_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_divider" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="Address_handler_Addr_Counter_0_addr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Address_handler_Addr_Counter_0" PORT="addr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="Address_handler_Addr_ctrl_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="IMU_CTRL" PORT="addr1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Address_handler/fsm_intr_0" HWVERSION="1.0" INSTANCE="Address_handler_fsm_intr_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fsm_intr" VLNV="xilinx.com:module_ref:fsm_intr:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_fsm_intr_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_divider_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_divider" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="strobe" SIGIS="undef" SIGNAME="External_Ports_next_reg_switch">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="next_reg_switch"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intr" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="Address_handler_fsm_intr_0_intr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Address_handler_Addr_Counter_0" PORT="en"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/IMU_CTRL" HWVERSION="1.0" INSTANCE="IMU_CTRL" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CTRL" VLNV="xilinx.com:module_ref:CTRL:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_CTRL_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_divider_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_divider" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="External_Ports_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="en"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="addr1" RIGHT="0" SIGIS="undef" SIGNAME="Address_handler_Addr_ctrl_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Address_handler_Addr_ctrl_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="data1" RIGHT="0" SIGIS="undef" SIGNAME="IMU_CTRL_data1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LEDs"/>
+            <CONNECTION INSTANCE="UART_TX_tx_mod_0" PORT="data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="data_ready" SIGIS="undef" SIGNAME="IMU_CTRL_data_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_TX_tx_mod_0" PORT="shift_load"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="cs" SIGIS="undef" SIGNAME="IMU_CTRL_cs">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="SCLK" SIGIS="undef" SIGNAME="IMU_CTRL_SCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="MOSI" SIGIS="undef" SIGNAME="IMU_CTRL_MOSI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MOSI"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="MISO" SIGIS="undef" SIGNAME="External_Ports_MISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MISO"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_TX/clk_divider_UART_0" HWVERSION="1.0" INSTANCE="UART_TX_clk_divider_UART_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_divider_UART" VLNV="xilinx.com:module_ref:clk_divider_UART:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_clk_divider_UART_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="UART_TX_clk_divider_UART_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_TX_tx_mod_0" PORT="clkfast"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_TX/tx_mod_0" HWVERSION="1.0" INSTANCE="UART_TX_tx_mod_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="tx_mod" VLNV="xilinx.com:module_ref:tx_mod:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_tx_mod_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clkfast" SIGIS="undef" SIGNAME="UART_TX_clk_divider_UART_0_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_TX_clk_divider_UART_0" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="IMU_CTRL_data1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="IMU_CTRL" PORT="data1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="shift_load" SIGIS="undef" SIGNAME="IMU_CTRL_data_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="IMU_CTRL" PORT="data_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sout" SIGIS="undef" SIGNAME="UART_TX_tx_mod_0_sout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="xmitmt" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/clk_divider" HWVERSION="1.0" INSTANCE="clk_divider" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_divider" VLNV="xilinx.com:module_ref:clk_divider:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_top_clk_divider_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="clk_divider_clk_div">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Address_handler_Addr_Counter_0" PORT="clk"/>
+            <CONNECTION INSTANCE="Address_handler_fsm_intr_0" PORT="clk"/>
+            <CONNECTION INSTANCE="Address_handler_Addr_ctrl_0" PORT="clk"/>
+            <CONNECTION INSTANCE="IMU_CTRL" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

@@ -1,0 +1,235 @@
+
+*** Running vivado
+    with args -log design_top_CTRL_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_top_CTRL_0_0.tcl
+
+
+****** Vivado v2021.1.1 (64-bit)
+  **** SW Build 3286242 on Wed Jul 28 13:09:46 MDT 2021
+  **** IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script '/home/esme/.Xilinx/Vivado/Vivado_init.tcl'
+source design_top_CTRL_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/mnt/data0/xilinx/Vivado/2021.1/data/ip'.
+Command: synth_design -top design_top_CTRL_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1152518
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2528.844 ; gain = 0.000 ; free physical = 6170 ; free virtual = 18513
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_top_CTRL_0_0' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.gen/sources_1/bd/design_top/ip/design_top_CTRL_0_0/synth/design_top_CTRL_0_0.vhd:71]
+INFO: [Synth 8-3491] module 'CTRL' declared at '/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:35' bound to instance 'U0' of component 'CTRL' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.gen/sources_1/bd/design_top/ip/design_top_CTRL_0_0/synth/design_top_CTRL_0_0.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'CTRL' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:50]
+WARNING: [Synth 8-614] signal 'conf_flag' is read in the process but is not in the sensitivity list [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:142]
+WARNING: [Synth 8-614] signal 'addr_reg_conf' is read in the process but is not in the sensitivity list [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:213]
+INFO: [Synth 8-256] done synthesizing module 'CTRL' (1#1) [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'design_top_CTRL_0_0' (2#1) [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.gen/sources_1/bd/design_top/ip/design_top_CTRL_0_0/synth/design_top_CTRL_0_0.vhd:71]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2528.844 ; gain = 0.000 ; free physical = 5219 ; free virtual = 17564
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 2528.844 ; gain = 0.000 ; free physical = 2851 ; free virtual = 15199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 2837 ; free virtual = 15185
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'CTRL'
+WARNING: [Synth 8-327] inferring latch for variable 'data1_reg' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:227]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      s0 |                       0000000001 |                             0000
+                s_conf_1 |                       0000000010 |                             0111
+                s_conf_2 |                       0000000100 |                             1000
+                s_conf_3 |                       0000001000 |                             1001
+                      s1 |                       0000010000 |                             0001
+                      s2 |                       0000100000 |                             0010
+                      s3 |                       0001000000 |                             0011
+                      s4 |                       0010000000 |                             0100
+                      s5 |                       0100000000 |                             0101
+                      s6 |                       1000000000 |                             0110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'CTRL'
+WARNING: [Synth 8-327] inferring latch for variable 'data_ready_reg' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:229]
+WARNING: [Synth 8-327] inferring latch for variable 'cs_reg' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:225]
+WARNING: [Synth 8-327] inferring latch for variable 'SCLK_reg' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:228]
+WARNING: [Synth 8-327] inferring latch for variable 'MOSI_reg' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:226]
+WARNING: [Synth 8-327] inferring latch for variable 'conf_flag_reg' [/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.srcs/sources_1/new/CTRL.vhd:152]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 1228 ; free virtual = 13578
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   9 Input   16 Bit        Muxes := 1     
+	  10 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 6     
+	  10 Input    8 Bit        Muxes := 1     
+	   9 Input    8 Bit        Muxes := 2     
+	   9 Input    4 Bit        Muxes := 1     
+	   9 Input    3 Bit        Muxes := 1     
+	  10 Input    1 Bit        Muxes := 6     
+	   9 Input    1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4206 ; free virtual = 16504
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4180 ; free virtual = 16479
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4132 ; free virtual = 16431
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4032 ; free virtual = 16330
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4025 ; free virtual = 16323
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4020 ; free virtual = 16318
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4018 ; free virtual = 16316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4017 ; free virtual = 16315
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4017 ; free virtual = 16315
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT2 |    10|
+|2     |LUT3 |    19|
+|3     |LUT4 |     5|
+|4     |LUT5 |    12|
+|5     |LUT6 |    11|
+|6     |FDCE |    32|
+|7     |FDPE |     1|
+|8     |FDRE |     8|
+|9     |LD   |    13|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   111|
+|2     |  U0     |CTRL   |   111|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4017 ; free virtual = 16315
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.750 ; gain = 7.906 ; free physical = 4066 ; free virtual = 16364
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2536.758 ; gain = 7.906 ; free physical = 4084 ; free virtual = 16382
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2536.758 ; gain = 0.000 ; free physical = 4183 ; free virtual = 16481
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2592.777 ; gain = 0.000 ; free physical = 4395 ; free virtual = 16693
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  LD => LDCE: 13 instances
+
+Synth Design complete, checksum: de75d66d
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2592.777 ; gain = 64.031 ; free physical = 4514 ; free virtual = 16813
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint '/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_CTRL_0_0_synth_1/design_top_CTRL_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2815.605 ; gain = 222.828 ; free physical = 2944 ; free virtual = 15243
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_top_CTRL_0_0, cache-ID = 4d551eff5926eb2f
+INFO: [Common 17-1381] The checkpoint '/home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_CTRL_0_0_synth_1/design_top_CTRL_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_top_CTRL_0_0_utilization_synth.rpt -pb design_top_CTRL_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 25 17:20:33 2021...

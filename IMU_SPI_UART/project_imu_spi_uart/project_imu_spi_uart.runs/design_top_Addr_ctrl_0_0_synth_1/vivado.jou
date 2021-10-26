@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1.1 (64-bit)
+# SW Build 3286242 on Wed Jul 28 13:09:46 MDT 2021
+# IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+# Start of session at: Mon Oct 25 17:19:56 2021
+# Process ID: 1152384
+# Current directory: /home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_Addr_ctrl_0_0_synth_1
+# Command line: vivado -log design_top_Addr_ctrl_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_top_Addr_ctrl_0_0.tcl
+# Log file: /home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_Addr_ctrl_0_0_synth_1/design_top_Addr_ctrl_0_0.vds
+# Journal file: /home/esme/Desktop/VivadoProjects/EmbeddedSystems/IMU_SPI_UART/project_imu_spi_uart/project_imu_spi_uart.runs/design_top_Addr_ctrl_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_top_Addr_ctrl_0_0.tcl -notrace

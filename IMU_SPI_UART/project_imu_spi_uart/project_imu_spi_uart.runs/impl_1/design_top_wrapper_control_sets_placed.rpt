@@ -1,0 +1,96 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1.1 (lin64) Build 3286242 Wed Jul 28 13:09:46 MDT 2021
+| Date         : Mon Oct 25 17:28:09 2021
+| Host         : adm-127190 running 64-bit Ubuntu 20.04.3 LTS
+| Command      : report_control_sets -verbose -file design_top_wrapper_control_sets_placed.rpt
+| Design       : design_top_wrapper
+| Device       : xc7z020
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    18 |
+|    Minimum number of control sets                        |    18 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    79 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    18 |
+| >= 0 to < 4        |     6 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              24 |           12 |
+| No           | No                    | Yes                    |              50 |           14 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              42 |           10 |
+| Yes          | Yes                   | No                     |               5 |            1 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------------------+-----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|                     Clock Signal                    |                    Enable Signal                    |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------------------+-----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|  design_top_i/IMU_CTRL/U0/MOSI_reg_i_2_n_0          |                                                     |                                                    |                1 |              1 |         1.00 |
+|  design_top_i/IMU_CTRL/U0/conf_flag__0              |                                                     |                                                    |                1 |              1 |         1.00 |
+|  design_top_i/IMU_CTRL/U0/SCLK_reg_i_2_n_0          |                                                     |                                                    |                1 |              1 |         1.00 |
+|  design_top_i/IMU_CTRL/U0/cs_reg_i_1_n_0            |                                                     |                                                    |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                      |                                                     |                                                    |                2 |              2 |         1.00 |
+|  design_top_i/UART_TX/clk_divider_UART_0/U0/clk_div |                                                     | rst_IBUF                                           |                1 |              3 |         3.00 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           | design_top_i/Address_handler/fsm_intr_0/U0/intr     | rst_IBUF                                           |                1 |              4 |         4.00 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           | design_top_i/IMU_CTRL/U0/count_conf                 | rst_IBUF                                           |                1 |              4 |         4.00 |
+|  design_top_i/UART_TX/clk_divider_UART_0/U0/clk_div | design_top_i/UART_TX/tx_mod_0/U0/cnt_bit[3]_i_1_n_0 | rst_IBUF                                           |                1 |              4 |         4.00 |
+|  design_top_i/UART_TX/clk_divider_UART_0/U0/clk_div | design_top_i/UART_TX/tx_mod_0/U0/count              | rst_IBUF                                           |                2 |              4 |         2.00 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           | design_top_i/IMU_CTRL/U0/addr_reg_conf0             | design_top_i/IMU_CTRL/U0/addr_reg_conf[15]_i_1_n_0 |                1 |              5 |         5.00 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           | design_top_i/IMU_CTRL/U0/data_reg                   | rst_IBUF                                           |                1 |              8 |         8.00 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           | design_top_i/IMU_CTRL/U0/addr_reg                   | rst_IBUF                                           |                2 |              8 |         4.00 |
+|  design_top_i/IMU_CTRL/U0/data1_reg[7]_i_2_n_0      |                                                     |                                                    |                4 |              9 |         2.25 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           |                                                     |                                                    |                2 |              9 |         4.50 |
+|  design_top_i/UART_TX/clk_divider_UART_0/U0/clk_div | design_top_i/UART_TX/tx_mod_0/U0/reg_data           | rst_IBUF                                           |                2 |             10 |         5.00 |
+|  design_top_i/clk_divider/U0/clk_div_BUFG           |                                                     | rst_IBUF                                           |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG                                      |                                                     | rst_IBUF                                           |                8 |             32 |         4.00 |
++-----------------------------------------------------+-----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+
+
